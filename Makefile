@@ -29,7 +29,7 @@ ci: test publish_pacts can_i_deploy $(DEPLOY_TARGET)
 # Use this for quick feedback when playing around with your workflows.
 fake_ci: .env
 	@CI=true \
-	GIT_COMMIT=`git rev-parse --short HEAD`+`date +%s` \
+	GIT_COMMIT=`git rev-parse --short HEAD`AND`date +%s` \
 	GIT_BRANCH=`git rev-parse --abbrev-ref HEAD` \
 	BASE_URL=http://localhost:5000 \
 	make ci
